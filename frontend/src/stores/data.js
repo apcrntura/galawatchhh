@@ -25,6 +25,11 @@ export const useData = defineStore('data', {
   },
   actions: {
     showToast(msg) {
+      showWarning(msg) {
+      this.warning = msg
+      clearTimeout(this.warningTimer)
+      this.warningTimer = setTimeout(() => { this.warning = '' }, 3000)
+        },
       this.toast = msg
       clearTimeout(this.toastTimer)
       this.toastTimer = setTimeout(() => { this.toast = '' }, 3500)
