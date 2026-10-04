@@ -9,7 +9,7 @@ export const useData = defineStore('data', {
     destinations: [], cameras: [], counts: {}, trends: {}, alerts: [],
     settings: { medium: 40, high: 70 },
     selectedId: null, periodMult: 1, now: Date.now(),
-    toast: '', toastTimer: null, loaded: false, error: '',
+    toast: '', toastTimer: null, warning: '', warningTimer: null, loaded: false, error: '',
     channel: null, pollTimer: null, tickTimer: null, trendTimer: null
   }),
   getters: {
