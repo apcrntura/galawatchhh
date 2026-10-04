@@ -87,6 +87,11 @@ onBeforeUnmount(() => data.unsubscribe())
     <DetailsPanel />
   </div>
 
+  <div class="warning-banner" :class="{ show: !!data.warning }">
+    <div class="warning-title">WARNING</div>
+    <div class="warning-text">{{ data.warning }}</div>
+  </div>
+  
   <div class="toast" :class="{ show: !!data.toast }">{{ data.toast }}</div>
   <ReportModal v-if="showReport" @close="showReport = false" />
 </template>
