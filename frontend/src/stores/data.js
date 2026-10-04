@@ -88,7 +88,7 @@ export const useData = defineStore('data', {
         })
         .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'alerts' }, p => {
           const d = this.destinations.find(x => x.id === p.new.destination_id)
-          this.showToast(`Overcrowding alert: ${d?.name || p.new.destination_id} has ${p.new.people_inside} people inside`)
+          this.showWarning(`OVERCROWDING WARNING: ${d?.name || p.new.destination_id} has ${p.new.people_inside} people inside`)
           this.loadAlerts()
         })
         .subscribe(status => console.log('Realtime status:', status))
